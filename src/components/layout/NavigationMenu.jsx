@@ -420,21 +420,24 @@ function NavigationMenu({
           </span>
 
           {/* Logo / brand area */}
+          {/* Logo / brand area */}
           <div className={`flex items-center border-b border-neutral-200 ${isCollapsed ? 'justify-center px-2 py-4' : 'px-4 py-4'}`}>
             {isCollapsed ? (
-              <div className="w-8 h-8 rounded-md bg-hb-primary flex items-center justify-center flex-shrink-0 overflow-hidden p-1">
-                <img src={BRANDING.logoSmallUrl} alt={BRANDING.logoAltText} className="max-w-full max-h-full object-contain" />
+              <div className="h-8 w-auto rounded-md flex items-center justify-center flex-shrink-0 overflow-hidden py-1">
+                {/* FIX: Removed 'w-8' fixed width. Let the logo scale its width automatically based on the 'h-8' height. */}
+                <img src={BRANDING.logoSmallUrl} alt={BRANDING.logoAltText} className="h-full w-auto object-contain" />
               </div>
             ) : (
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-md bg-hb-primary flex items-center justify-center flex-shrink-0 overflow-hidden p-1">
-                  <img src={BRANDING.logoSmallUrl} alt={BRANDING.logoAltText} className="max-w-full max-h-full object-contain" />
+              <div className="flex items-center gap-3">
+                {/* FIX: Removed 'w-8' and background color so the rectangular logo has room to breathe natively. */}
+                <div className="h-8 w-auto rounded-md flex items-center justify-center flex-shrink-0 overflow-hidden py-1">
+                  <img src={BRANDING.logoUrl} alt={BRANDING.logoAltText} className="h-full w-auto object-contain" />
                 </div>
-                <div className="flex flex-col min-w-0">
-                  <span className="text-sm font-semibold text-neutral-900 hb-text-truncate">
+                <div className="flex flex-col min-w-0 justify-center">
+                  <span className="text-sm font-bold text-neutral-900 hb-text-truncate leading-tight">
                     Horizon
                   </span>
-                  <span className="text-2xs text-neutral-500 hb-text-truncate">
+                  <span className="text-xs text-neutral-500 hb-text-truncate leading-tight">
                     Member Portal
                   </span>
                 </div>

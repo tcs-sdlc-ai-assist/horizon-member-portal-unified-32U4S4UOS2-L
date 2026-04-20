@@ -224,123 +224,16 @@ function LoginPage({ className = '', testId }) {
       data-testid={testId || 'login-page'}
     >
       {/* Left panel — Banner image (hidden on mobile) */}
-      <div className="hidden lg:flex lg:w-1/2 xl:w-3/5 relative bg-gradient-primary">
-        {/* Banner overlay content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-12">
-          <div className="max-w-lg text-left">
-            {/* Large logo */}
-            <div className="flex items-start mb-8">
-              <img src={BRANDING.logoUrl} alt={BRANDING.logoAltText} className="h-16 w-auto object-contain" />
-            </div>
-
-            <h1 className="text-4xl font-bold text-white mb-4">
-              {BRANDING.companyName}
-            </h1>
-            <h2 className="text-xl font-medium text-white/90 mb-3">
-              {BRANDING.portalName}
-            </h2>
-            <p className="text-base text-white/70 leading-relaxed mb-8">
-              Manage your healthcare benefits, view claims, access your ID cards, and find care —
-              all in one place.
-            </p>
-
-            {/* Feature highlights */}
-            <div className="grid grid-cols-2 gap-4 text-left">
-              <div className="flex items-start gap-3 bg-white/10 rounded-lg px-4 py-3">
-                <svg
-                  className="w-5 h-5 text-white/80 flex-shrink-0 mt-0.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-                <div>
-                  <p className="text-sm font-semibold text-white">Benefits</p>
-                  <p className="text-xs text-white/60 mt-0.5">View your plan details</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 bg-white/10 rounded-lg px-4 py-3">
-                <svg
-                  className="w-5 h-5 text-white/80 flex-shrink-0 mt-0.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                  <polyline points="14 2 14 8 20 8" />
-                  <line x1="16" y1="13" x2="8" y2="13" />
-                  <line x1="16" y1="17" x2="8" y2="17" />
-                  <polyline points="10 9 9 9 8 9" />
-                </svg>
-                <div>
-                  <p className="text-sm font-semibold text-white">Claims</p>
-                  <p className="text-xs text-white/60 mt-0.5">Track your claims</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 bg-white/10 rounded-lg px-4 py-3">
-                <svg
-                  className="w-5 h-5 text-white/80 flex-shrink-0 mt-0.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect x="2" y="5" width="20" height="14" rx="2" />
-                  <line x1="2" y1="10" x2="22" y2="10" />
-                </svg>
-                <div>
-                  <p className="text-sm font-semibold text-white">ID Cards</p>
-                  <p className="text-xs text-white/60 mt-0.5">Digital ID cards</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 bg-white/10 rounded-lg px-4 py-3">
-                <svg
-                  className="w-5 h-5 text-white/80 flex-shrink-0 mt-0.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
-                <div>
-                  <p className="text-sm font-semibold text-white">Find Care</p>
-                  <p className="text-xs text-white/60 mt-0.5">Doctors & telehealth</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom branding */}
-        <div className="absolute bottom-6 left-0 right-0 text-center">
-          <p className="text-xs text-white/40">
-            © {BRANDING.copyrightYear} {BRANDING.companyName}. All rights reserved.
-          </p>
-        </div>
+      <div className="hidden lg:flex lg:w-1/2 relative bg-white items-center justify-center p-8 xl:p-16">
+        <img
+          src={BRANDING.bannerUrl}
+          alt={`${BRANDING.companyName} banner`}
+          className="w-full max-w-2xl h-auto object-contain"
+        />
       </div>
 
       {/* Right panel — Login form */}
-      <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-surface-secondary">
+      <div className="flex-1 lg:w-1/2 flex items-center justify-center px-4 sm:px-8 lg:px-16 bg-surface-secondary">
         <div className="w-full max-w-md">
           {/* Mobile logo (visible only on mobile/tablet) */}
           <div className="lg:hidden flex flex-col items-center mb-8">
@@ -356,11 +249,11 @@ function LoginPage({ className = '', testId }) {
           >
             {/* Card header */}
             <div className="px-6 sm:px-8 pt-8 pb-2">
-              <div className="hidden lg:flex items-center gap-3 mb-6">
-                <img src={BRANDING.logoSmallUrl} alt={BRANDING.logoAltText} className="h-10 w-auto object-contain flex-shrink-0" />
+              <div className="hidden lg:flex items-center gap-4 mb-6">
+                <img src={BRANDING.logoUrl} alt={BRANDING.logoAltText} className="h-16 w-auto object-contain flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-semibold text-neutral-900">{BRANDING.companyName}</p>
-                  <p className="text-2xs text-neutral-500">{BRANDING.portalName}</p>
+                  <p className="text-lg font-bold text-neutral-900">{BRANDING.companyName}</p>
+                  <p className="text-sm text-neutral-500">{BRANDING.portalName}</p>
                 </div>
               </div>
 

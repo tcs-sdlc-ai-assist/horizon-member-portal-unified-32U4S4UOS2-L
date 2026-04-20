@@ -8,10 +8,10 @@
 export const APP_TITLE = import.meta.env.VITE_APP_TITLE || 'Horizon Member Portal'
 
 export const BRANDING = {
-  logoUrl: '/assets/images/horizon-logo.jpg',
+  logoUrl: 'https://www.horizonblue.com/themes/custom/bootstrap_business/plancomparison/images/logo.png',
   logoAltText: 'Horizon Healthcare',
-  logoSmallUrl: '/assets/images/horizon-logo.jpg',
-  bannerUrl: '/assets/images/horizon-banner.jpg',
+  logoSmallUrl: 'https://www.horizonblue.com/themes/custom/bootstrap_business/plancomparison/images/logo.png',
+  bannerUrl: 'https://www.horizonblue.com/securecms-documents/3649/hb-home-banner.png',
   faviconUrl: '/vite.svg',
   companyName: 'Horizon Healthcare',
   portalName: 'Member Portal',
